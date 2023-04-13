@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 
-static void print_hello (GtkWidget *widget, gpointer   data) {
+static void print_msg (GtkWidget *widget, gpointer   data) {
 	g_print ("Valeria Ti Amo!!!\n");
 }
 
@@ -13,7 +13,7 @@ static void activate (GtkApplication *app, gpointer user_data) {
 	gtk_window_set_default_size (GTK_WINDOW (window), 200, 200);
 
 	button = gtk_button_new_with_label ("Valeria Ti Amo!!!");
-	g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
+	g_signal_connect (button, "clicked", G_CALLBACK (print_msg), NULL);
 	gtk_window_set_child (GTK_WINDOW (window), button);
 
 	gtk_window_present (GTK_WINDOW (window));

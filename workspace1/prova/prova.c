@@ -91,6 +91,7 @@ static void activate (GtkApplication *app, gpointer user_data) {
     gtk_box_append (GTK_BOX (box2), button3);
     gtk_box_append (GTK_BOX (box2), button4);
     gtk_box_append (GTK_BOX (box2), valeria_button);
+    
     gtk_box_append (GTK_BOX (box3), button7);
     gtk_box_append (GTK_BOX (box3), button8);
 

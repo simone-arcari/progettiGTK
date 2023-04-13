@@ -2,12 +2,11 @@
 #include <glib/gstdio.h>
 
 static void
-print_hello(GtkWidget *widget, gpointer data) {
+print_msg(GtkWidget *widget, gpointer data) {
     g_print("Hello World\n");
 }
 
-static void
-quit_cb(GtkWindow *window) {
+static void quit_cb(GtkWindow *window) {
     gtk_window_close(window);
 }
 
@@ -21,13 +20,19 @@ static void activate(GtkApplication *app, gpointer user_data) {
     gtk_window_set_application(GTK_WINDOW(window), app);
 
     GObject *button = gtk_builder_get_object(builder, "button1");
-    g_signal_connect(button, "clicked", G_CALLBACK(print_hello), NULL);
+    g_signal_connect(button, "clicked", G_CALLBACK(print_msg), NULL);
 
     button = gtk_builder_get_object(builder, "button2");
-    g_signal_connect(button, "clicked", G_CALLBACK(print_hello), NULL);
+    g_signal_connect(button, "clicked", G_CALLBACK(print_msg), NULL);
 
     button = gtk_builder_get_object(builder, "quit");
     g_signal_connect_swapped(button, "clicked", G_CALLBACK(quit_cb), window);
+
+    button = gtk_builder_get_object(builder, "button3");
+    g_signal_connect(button, "clicked", G_CALLBACK(print_msg), NULL);
+
+    button = gtk_builder_get_object(builder, "button4");
+    g_signal_connect(button, "clicked", G_CALLBACK(print_msg), NULL);
 
     gtk_widget_show(GTK_WIDGET(window));
 

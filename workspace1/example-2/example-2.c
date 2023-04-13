@@ -1,7 +1,7 @@
 #include <gtk/gtk.h>
 
 static void
-print_hello(GtkWidget *widget, gpointer data) {
+print_msg(GtkWidget *widget, gpointer data) {
     g_print("Hello World\n");
 }
 
@@ -21,7 +21,7 @@ static void activate(GtkApplication *app, gpointer user_data) {
     gtk_window_set_child(GTK_WINDOW(window), grid);
 
     button = gtk_button_new_with_label("Button 1");
-    g_signal_connect(button, "clicked", G_CALLBACK(print_hello), NULL);
+    g_signal_connect(button, "clicked", G_CALLBACK(print_msg), NULL);
 
     /* Place the first button in the grid cell (0, 0), and make it fill
      * just 1 cell horizontally and vertically (ie no spanning)
@@ -29,7 +29,7 @@ static void activate(GtkApplication *app, gpointer user_data) {
     gtk_grid_attach(GTK_GRID(grid), button, 0, 0, 1, 1);
 
     button = gtk_button_new_with_label("Button 2");
-    g_signal_connect(button, "clicked", G_CALLBACK(print_hello), NULL);
+    g_signal_connect(button, "clicked", G_CALLBACK(print_msg), NULL);
 
     /* Place the second button in the grid cell (1, 0), and make it fill
      * just 1 cell horizontally and vertically (ie no spanning)
