@@ -1,10 +1,9 @@
 {
     "files.associations": {
         "gtk.h": "c",
-        "gtkcss.h": "c",
-        "glib.h": "c",
-        "galloca.h": "c",
-        "gtypes.h": "c",
-        "gmacros.h": "c"
+        "gtkwindow.h": "c",
+        "gtkversion.h": "c",
+        "gtkvideo.h": "c",
+        "stdio.h": "c"
     }
 }

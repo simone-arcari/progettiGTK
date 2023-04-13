@@ -6,7 +6,10 @@
 #include <stdio.h>
 
 static void print_msg (GtkWidget *widget, gpointer id) {
-	g_print ("button%d pressed\n", (int)id);
+    if((int)id != 5)
+	    g_print ("button%d pressed\n", (int)id);
+    else
+        g_print ("ma che cazzo vuooooi?!?!?!?\n");
 }
 
 
@@ -16,6 +19,7 @@ static void activate (GtkApplication *app, gpointer user_data) {
     GtkWidget *button2;
     GtkWidget *button3;
     GtkWidget *button4;
+    GtkWidget *valeriaButton;
     GtkWidget *main_container;
     GtkWidget *box1;
     GtkWidget *box2;
@@ -43,11 +47,13 @@ static void activate (GtkApplication *app, gpointer user_data) {
     button2 = gtk_button_new_with_label ("button 2");
     button3 = gtk_button_new_with_label ("button 3");
     button4 = gtk_button_new_with_label ("button 4");
+    valeriaButton = gtk_button_new_with_label ("Tasto Valeria da non premere!");
 
 	g_signal_connect (button1, "clicked", G_CALLBACK (print_msg), (gpointer)1);
     g_signal_connect (button2, "clicked", G_CALLBACK (print_msg), (gpointer)2);
     g_signal_connect (button3, "clicked", G_CALLBACK (print_msg), (gpointer)3);
     g_signal_connect (button4, "clicked", G_CALLBACK (print_msg), (gpointer)4);
+    g_signal_connect (valeriaButton, "clicked", G_CALLBACK (print_msg), (gpointer)5);
 
     /* appending... */
     gtk_box_append (GTK_BOX (box1), button1);
@@ -55,6 +61,7 @@ static void activate (GtkApplication *app, gpointer user_data) {
 
     gtk_box_append (GTK_BOX (box2), button3);
     gtk_box_append (GTK_BOX (box2), button4);
+    gtk_box_append (GTK_BOX (box2), valeriaButton);
 
     gtk_box_append (GTK_BOX (main_container), box1);
     gtk_box_append (GTK_BOX (main_container), box2);
