@@ -22,7 +22,7 @@ static void activate(GtkApplication *app, gpointer user_data) {
 
     /* Construct a GtkBuilder instance and load our UI description */
     builder = gtk_builder_new();
-    gtk_builder_add_from_file(builder, "xml.ui", NULL);
+    gtk_builder_add_from_file(builder, "xml.xml", NULL);
 
 
     /* Connect signal handlers to the constructed widgets. */
