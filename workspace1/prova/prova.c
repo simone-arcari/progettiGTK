@@ -108,7 +108,7 @@ static void activate (GtkApplication *app, gpointer user_data) {
 
 
     /* set visible */
-	gtk_widget_show(window);    //gtk_window_present (GTK_WINDOW (window));
+	gtk_widget_set_visible(window, true); //gtk_widget_show(window);    //gtk_window_present (GTK_WINDOW (window));
 }
 
 

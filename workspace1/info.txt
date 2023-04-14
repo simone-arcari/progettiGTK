@@ -1,0 +1,165 @@
+Elenco dei widget disponibili nella libreria GTK:
+
+        GtkWindow
+
+        GtkApplicationWindow
+
+        GtkDialog
+
+        GtkMessageDialog
+
+        GtkFileChooserDialog
+
+        GtkColorChooserDialog
+
+        GtkFontChooserDialog
+
+        GtkAssistant
+
+        GtkAboutDialog
+
+        GtkOffscreenWindow
+
+        GtkBox
+
+        GtkButton
+
+        GtkCheckButton
+
+        GtkRadioButton
+
+        GtkToggleButton
+
+        GtkLinkButton
+
+        GtkSwitch
+
+        GtkScaleButton
+
+        GtkVolumeButton
+
+        GtkArrow
+
+        GtkCalendar
+
+        GtkEntry
+
+        GtkSearchEntry
+
+        GtkSpinButton
+
+        GtkTextView
+
+        GtkLabel
+
+        GtkProgressBar
+
+        GtkSeparator
+
+        GtkSpinner
+
+        GtkStatusbar
+
+        GtkInfoBar
+
+        GtkToolbar
+
+        GtkMenuBar
+
+        GtkMenu
+
+        GtkPopupMenu
+
+        GtkComboBox
+
+        GtkComboBoxText
+
+        GtkListBox
+
+        GtkFlowBox
+
+        GtkIconView
+
+        GtkTreeView
+
+        GtkFileChooserButton
+
+        GtkColorButton
+
+        GtkFontButton
+
+        GtkImage
+
+        GtkDrawingArea
+
+######################################################################################################################################################
+
+Descrizione di ogni widget della libreria GTK:
+
+        GtkWindow: rappresenta una finestra dell'applicazione, può contenere altri widget come pulsanti, etichette, ecc.
+
+        GtkApplicationWindow: simile a GtkWindow, ma è progettato per essere utilizzato come finestra principale di un'applicazione.
+
+        GtkDialog: una finestra modale che presenta un messaggio all'utente e richiede una risposta.
+
+        GtkMessageDialog: un tipo specifico di dialogo che mostra un messaggio all'utente con un'icona corrispondente.
+
+        GtkFileChooserDialog: un dialogo utilizzato per selezionare un file o una cartella.
+
+        GtkColorChooserDialog: un dialogo utilizzato per selezionare un colore.
+
+        GtkFontChooserDialog: un dialogo utilizzato per selezionare un tipo di carattere e le sue proprietà.
+
+        GtkAssistant: un widget che guida l'utente attraverso una serie di passi, ad esempio durante la configurazione di un'applicazione.
+
+        GtkAboutDialog: un dialogo che visualizza informazioni sull'applicazione.
+
+        GtkOffscreenWindow: una finestra invisibile utilizzata per la creazione di immagini, pixmap e bitmap.
+
+        GtkBox: un contenitore che organizza i suoi figli in una fila orizzontale o verticale.
+
+        GtkButton: un pulsante cliccabile.
+
+        GtkCheckButton: una casella di controllo che può essere selezionata o deselezionata.
+
+        GtkRadioButton: un gruppo di pulsanti a scelta singola, in cui solo uno può essere selezionato alla volta.
+
+        GtkToggleButton: un pulsante che può essere attivato o disattivato.
+
+        GtkLinkButton: un pulsante che apre un URL quando viene cliccato.
+
+        GtkSwitch: un interruttore che può essere attivato o disattivato.
+
+        GtkScaleButton: un pulsante che apre un widget di scorrimento quando viene cliccato.
+
+        GtkVolumeButton: un pulsante per aumentare o diminuire il volume.
+
+        GtkArrow: una freccia che può essere utilizzata per indicare una direzione.
+
+        GtkCalendar: un widget che visualizza un calendario.
+
+        GtkEntry: un campo di testo in cui l'utente può inserire del testo.
+
+        GtkSearchEntry: un campo di testo con un'icona di ricerca che permette di effettuare ricerche.
+
+        GtkSpinButton: un widget che permette all'utente di selezionare un valore numerico da un range di valori.
+
+        GtkTextView: un widget per la visualizzazione e la modifica di testo.
+
+        GtkLabel: una etichetta di testo non interattiva.
+
+        GtkProgressBar: una barra di avanzamento che mostra il progresso di un'operazione.
+
+        GtkSeparator: un widget per separare visivamente altri widget.
+
+        GtkSpinner: un widget che indica un'attività in corso.
+
+        GtkStatusbar: una barra di stato utilizzata per mostrare informazioni sull'applicazione.
+
+        GtkInfoBar: una barra utilizzata per mostrare informazioni temporanee all'utente.
+
+        GtkToolbar: una barra di strumenti che contiene pulsanti e altri widget.
+
+        GtkMenuBar: una barra dei menu che contiene i menu dell'applicazione.
+
+        GtkMenu: un menu a comparsa che mostra opzioni quando viene clic
