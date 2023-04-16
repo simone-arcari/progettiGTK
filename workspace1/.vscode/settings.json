@@ -4,6 +4,7 @@
         "gtkwindow.h": "c",
         "gtkversion.h": "c",
         "gtkvideo.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "config.h": "c"
     }
 }
