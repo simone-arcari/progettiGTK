@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object id="window" class="GtkWindow">
+        <property name="title">TITOLO</property>
+
+        <child>
+            <object id="main_container" class="GtkBox">
+                <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+
+                <child>
+                    <object id="grid" class="GtkGrid">
+                        <child>
+                            <object id="button1" class="GtkButton">
+                                <property name="label">Button 1</property>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">0</property>
+                                </layout>
+                            </object>
+                        </child>
+
+                        <child>
+                            <object id="button2" class="GtkButton">
+                                <property name="label">Button 2</property>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">0</property>
+                                </layout>
+                            </object>
+                        </child>
+
+                        <child>
+                            <object id="quit" class="GtkButton">
+                                <property name="label">Quit</property>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">1</property>
+                                    <property name="column-span">2</property>
+                                </layout>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+
+                <child>    
+                    <object id="box" class="GtkBox">
+                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+
+                        <child>
+                            <object id="button3" class="GtkButton">
+                                <property name="label">Button 3</property>
+                            </object>
+                        </child>
+
+                        <child>
+                            <object id="button4" class="GtkButton">
+                                <property name="label">Button 4</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>

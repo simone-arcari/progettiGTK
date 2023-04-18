@@ -1,0 +1,73 @@
+/*
+ *      gcc $(pkg-config --cflags gtk4) -o prova-socket prova-socket.c $(pkg-config --libs gtk4) 
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <gtk/gtk.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+
+static void create_socket(GtkWidget *widget, gpointer data) {    
+    int sockfd = socket(AF_INET, SOCK_STREAM, 0);  // crea una socket
+    if (sockfd == -1) {
+        perror("socket");
+        exit(EXIT_FAILURE);
+    }
+
+    struct sockaddr_in addr = {
+        .sin_family = AF_INET,
+        .sin_addr.s_addr = INADDR_ANY,
+        .sin_port = htons(8080)  // porta di ascolto
+    };
+
+    if (bind(sockfd, (struct sockaddr*)&addr, sizeof(addr)) == -1) {
+        perror("bind");
+        exit(EXIT_FAILURE);
+    }
+
+    if (listen(sockfd, 5) == -1) {  // mette in ascolto la socket
+        perror("listen");
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Socket creata e messa in ascolto sulla porta %d\n", ntohs(addr.sin_port));
+}
+
+
+static void activate(GtkApplication *app, gpointer user_data) {
+    GtkWidget *window;
+    GtkWidget *button;
+    GtkWidget *box;
+
+    window = gtk_application_window_new(app);
+    gtk_window_set_title(GTK_WINDOW(window), "Window-socket");
+    gtk_window_set_default_size(GTK_WINDOW(window), 200, 200);
+
+    box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    gtk_widget_set_halign(box, GTK_ALIGN_CENTER);
+    gtk_widget_set_valign(box, GTK_ALIGN_CENTER);
+
+    gtk_window_set_child(GTK_WINDOW(window), box);
+
+    button = gtk_button_new_with_label("crea socket");
+
+    g_signal_connect(button, "clicked", G_CALLBACK(create_socket), NULL);
+    //g_signal_connect_swapped(button, "clicked", G_CALLBACK(gtk_window_destroy), window);
+
+    gtk_box_append(GTK_BOX(box), button);
+
+    gtk_widget_show(window);
+}
+
+
+int main(int argc, char **argv) {
+    GtkApplication *app;
+    int status;
+
+    app = gtk_application_new("org.gtk.example", G_APPLICATION_FLAGS_NONE);
+    g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
+    status = g_application_run(G_APPLICATION(app), argc, argv);
+    g_object_unref(app);
+
+    return status;
+}
